@@ -1,12 +1,12 @@
 package entity;
 
-public class Clent {
+public class Client {
     private Long id;
     private String name;
 
     private static Long counter = 0L;
 
-    public Clent(String name) {
+    public Client(String name) {
         counter++;
         this.id = counter;
         this.name = name;

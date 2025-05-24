@@ -20,10 +20,10 @@ public class Driver {
         counter++;
         this.id = counter;
         this.personnelNumber = null;
-        this.firstName = "";
-        this.lastName = "";
-        this.middleName = "";
-        this.birthDate = "";
+        this.firstName = "undefined";
+        this.lastName = "undefined";
+        this.middleName = "undefined";
+        this.birthDate = "undefined";
         this.rating = 0.0;
     }
 

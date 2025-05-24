@@ -14,8 +14,8 @@ public class Car {
     public Car() {
         counter++;
         this.id = counter;
-        this.model = "";
-        this.registrationNumber = "";
+        this.model = "undefined";
+        this.registrationNumber = "undefined";
     }
 
     public void create() {

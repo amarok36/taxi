@@ -23,7 +23,7 @@ public class Main {
             System.out.println("5. Выйти из программы");
 
             choice = sc.next().charAt(0);
-            sc.hasNextLine();
+            sc.nextLine();
 
             switch (choice) {
                 case '1':
