@@ -30,7 +30,7 @@ public class Driver {
     public void create() {
         Scanner in = new Scanner(System.in);
 
-        while (personnelNumber == null) {
+        while (personnelNumber == null || personnelNumber.toString().trim().isEmpty()) {
             try {
                 System.out.print("Введите табельный номер: ");
                 String input = in.nextLine();
@@ -40,40 +40,44 @@ public class Driver {
             }
         }
 
-        while (lastName.trim().isEmpty()) {
+        while (lastName.trim().isEmpty() || lastName.equals("undefined")) {
             System.out.print("Введите фамилию: ");
             lastName = in.nextLine();
             if (lastName.trim().isEmpty()) {
                 System.out.println("Ошибка. Фамилия не может быть пустой.");
+                lastName = "undefined";
             }
         }
 
-        while (firstName.trim().isEmpty()) {
+        while (firstName.trim().isEmpty() || firstName.equals("undefined")) {
             System.out.print("Введите имя: ");
             firstName = in.nextLine();
             if (firstName.trim().isEmpty()) {
                 System.out.println("Ошибка. Имя не может быть пустым.");
+                firstName = "undefined";
             }
         }
 
-        while (middleName.trim().isEmpty()) {
+        while (middleName.trim().isEmpty() || middleName.equals("undefined")) {
             System.out.print("Введите отчество: ");
             middleName = in.nextLine();
             if (middleName.trim().isEmpty()) {
                 System.out.println("Ошибка. Отчество не может быть пустым.");
+                middleName = "undefined";
             }
         }
 
-        while (birthDate.trim().isEmpty()) {
+        while (birthDate.trim().isEmpty() || birthDate.equals("undefined")) {
             System.out.print("Введите дату рождения: ");
             birthDate = in.nextLine();
             if (birthDate.trim().isEmpty()) {
                 System.out.println("Ошибка. Дата рождения не может быть пустой.");
+                birthDate = "undefined";
             }
         }
     }
 
     public void display() {
-        System.out.println(id + ". " + lastName + " " + firstName.charAt(0) + "." + middleName.charAt(0) + ". (" + personnelNumber + ")");
+        System.out.println(lastName + " " + firstName.charAt(0) + "." + middleName.charAt(0) + ". (" + personnelNumber + ")");
     }
 }
