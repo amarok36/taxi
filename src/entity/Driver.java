@@ -27,6 +27,10 @@ public class Driver {
         this.rating = 0.0;
     }
 
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
     public void create() {
         Scanner in = new Scanner(System.in);
 
@@ -77,7 +81,59 @@ public class Driver {
         }
     }
 
-    public void display() {
+    public void edit() {
+        Scanner in = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Введите фамилию: ");
+            lastName = in.nextLine().trim();
+            if (!lastName.isEmpty()) {
+                break;
+            }
+            System.out.println("Ошибка. Фамилия не может быть пустой.");
+        }
+
+        while (true) {
+            System.out.print("Введите имя: ");
+            firstName = in.nextLine().trim();
+            if (!firstName.isEmpty()) {
+                break;
+            }
+            System.out.println("Ошибка. Имя не может быть пустым.");
+        }
+
+        while (true) {
+            System.out.print("Введите отчество: ");
+            middleName = in.nextLine().trim();
+            if (!middleName.isEmpty()) {
+                break;
+            }
+            System.out.println("Ошибка. Отчество не может быть пустым.");
+        }
+
+        while (true) {
+            System.out.print("Введите дату рождения: ");
+            birthDate = in.nextLine().trim();
+            if (!birthDate.isEmpty()) {
+                break;
+            }
+            System.out.println("Ошибка. Дата рождения не может быть пустой.");
+        }
+    }
+
+    public void shortDisplay() {
         System.out.println(lastName + " " + firstName.charAt(0) + "." + middleName.charAt(0) + ". (" + personnelNumber + ")");
+    }
+
+    public void fullDisplay() {
+        System.out.println("Табельный номер: " + personnelNumber);
+        System.out.println("ФИО: " + lastName + " " + firstName + " " + middleName);
+        System.out.println("Дата рождения: " + birthDate);
+        System.out.println("Рейтинг: " + rating);
+        if (car != null) {
+            System.out.println("Закрепленный автомобиль: " + car.getModel() + " (" + car.getRegistrationNumber() + ")");
+        } else {
+            System.out.println("Закрепленный автомобиль: нет");
+        }
     }
 }
