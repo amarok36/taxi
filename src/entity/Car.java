@@ -18,6 +18,14 @@ public class Car {
         this.registrationNumber = "undefined";
     }
 
+    public String getModel() {
+        return model;
+    }
+
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
+
     public void create() {
         Scanner in = new Scanner(System.in);
 
@@ -37,6 +45,28 @@ public class Car {
                 System.out.println("Ошибка. Регистрационный номер не может быть пустым.");
                 registrationNumber = "undefined";
             }
+        }
+    }
+
+    public void edit() {
+        Scanner in = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Введите модель автомобиля: ");
+            model = in.nextLine().trim();
+            if (!model.isEmpty()) {
+                break;
+            }
+            System.out.println("Ошибка. Модель не может быть пустой.");
+        }
+
+        while (true) {
+            System.out.print("Введите регистрационный номер: ");
+            registrationNumber = in.nextLine().trim();
+            if (!registrationNumber.isEmpty()) {
+                break;
+            }
+            System.out.println("Ошибка. Регистрационный номер не может быть пустым.");
         }
     }
 
